@@ -1,0 +1,84 @@
+/* Navbar Start */
+.navbar {
+  background-color: #f0f0f0;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.buttons button {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+/* Navbar END */
+/* Body Start */
+/* App.css */
+
+.body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.video-player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.video-container {
+  width: 70%;
+}
+
+.video {
+  width: 100%;
+}
+
+.captions-container {
+  width: 30%;
+}
+
+/* Body End */
+/* Footer Start */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #0056b3;
+}
+/* Footer End */
