@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import '../App.css'; // Import CSS file for styling
 import logo from '../title.png'; // Import logo image
+import { FaSpinner } from 'react-icons/fa'; // Import spinner icon from react-icons
 
 function Navbar() {
   const fileInputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [uploading, setUploading] = useState(false); // State to track uploading status
   const [uploadSuccess, setUploadSuccess] = useState(false);
 
   const handleBrowseButtonClick = () => {
@@ -18,6 +20,7 @@ function Navbar() {
 
   const handleUploadButtonClick = async () => {
     if (selectedFile) {
+      setUploading(true); // Start uploading
       try {
         const formData = new FormData();
         formData.append("file", selectedFile);
@@ -36,6 +39,8 @@ function Navbar() {
         }
       } catch (error) {
         console.error("Error:", error);
+      } finally {
+        setUploading(false); // Stop uploading
       }
     } else {
       console.error("No file selected.");
@@ -59,7 +64,7 @@ function Navbar() {
           />
           <br />
           <button onClick={handleUploadButtonClick} disabled={!selectedFile}>
-            Upload File
+            {uploading ? <FaSpinner className="spinner" /> : "Upload File"} {/* spinner icon */}
           </button>
         </div>
       </div>
