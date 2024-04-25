@@ -32,6 +32,41 @@
 
 /* Navbar END */
 /* Body Start */
+/* App.css */
+
+.body {
+  padding: 20px;
+}
+
+.message-box {
+  background-color: rgb(193, 242, 193);
+  border: 1px solid green;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.transcription {
+  white-space: pre-wrap;
+}
+
+.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: lightblue;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background-color: blue;
+  color: white;
+}
 
 
 /* Body End */

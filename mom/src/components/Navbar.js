@@ -1,9 +1,11 @@
+// Navbar.js
+
 import React, { useRef, useState } from 'react';
 import '../App.css'; // Import CSS file for styling
 import logo from '../title.png'; // Import logo image
 import { FaSpinner } from 'react-icons/fa'; // Import spinner icon from react-icons
 
-function Navbar() {
+function Navbar({ setTranscription }) { // Pass setTranscription as a prop
   const fileInputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false); // State to track uploading status
@@ -31,6 +33,8 @@ function Navbar() {
         });
 
         if (response.ok) {
+          const data = await response.json();
+          setTranscription(data.transcription); // Pass transcription to Body component
           setUploadSuccess(true); // Show the popup
           setTimeout(() => setUploadSuccess(false), 3000); // Hide the popup after 3 seconds
           setSelectedFile(null); // Clear selected file
