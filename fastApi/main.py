@@ -41,13 +41,10 @@ async def upload_file(file: UploadFile = File(...)):
 
             # Log the summary
             logging.info("Summary generated: %s", summarized_captions)
-            
 
+            # Return summary along with other information
             return JSONResponse(content={"message": "File uploaded successfully", "file_path": file_path, "transcription": captions, "summary": summarized_captions, "log_info": f"Summary generated: {summarized_captions}"})
         else:
             return JSONResponse(status_code=400, content={"message": "Uploaded video file does not exist"})
     else:
         return JSONResponse(status_code=400, content={"message": "Only video files are allowed"})
-
-
-
